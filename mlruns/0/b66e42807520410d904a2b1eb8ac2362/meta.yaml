@@ -1,0 +1,14 @@
+artifact_uri: file:///home/zezo/Desktop/Data-science-project/mlruns/0/b66e42807520410d904a2b1eb8ac2362/artifacts
+end_time: 1753097372090
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b66e42807520410d904a2b1eb8ac2362
+run_name: suave-snake-303
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753097372080
+status: 4
+tags: []
+user_id: zezo

@@ -1,0 +1,10 @@
+artifact_location: file:///home/zezo/Desktop/Data-science-project/mlruns/0/models/m-f5d84094ee024f1c8031c9d21464fe16/artifacts
+creation_timestamp: 1753097409282
+experiment_id: '0'
+last_updated_timestamp: 1753097411049
+model_id: m-f5d84094ee024f1c8031c9d21464fe16
+model_type: null
+name: model
+source_run_id: cbf4af58ed5247059ae6b58b4067d6d4
+status: 2
+status_message: null

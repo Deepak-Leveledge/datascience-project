@@ -1,3 +1,4 @@
+from src.datascience.pipelines.data_evaluation import ModelEvaluationPipeline
 from src.datascience.config.configuration import ConfigurationManager
 from src.datascience.pipelines.model_training import ModelTrainerPipeline
 from src.datascience import logger
@@ -58,14 +59,16 @@ except Exception as e:
 
 
 
-# if __name__ == "__main__":
-#     try:
-#         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-#         config = ConfigurationManager()
-#         model_trainer_config = config.get_model_trainer_config()
-#         obj = ModelTrainerPipeline(config=model_trainer_config)
-#         obj.initiate_model_training()
-#         logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
-#     except Exception as e:
-#         logger.exception(e)
-#         raise e
+
+
+
+STAGE_NAME = "Model Evaluation Stage"
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    data_evaluation_pipeline = ModelEvaluationPipeline(config=ConfigurationManager().get_model_evaluation_config())
+    data_evaluation_pipeline.initiate_model_evaluation()
+    
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
