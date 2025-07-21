@@ -2,7 +2,7 @@ from src.datascience.components.data_transformation import DataTransformation
 from src.datascience.config.configuration import ConfigurationManager
 from src.datascience.components.data_validation import DataValidation,DataValidationConfig
 from src.datascience import logger
-
+from src.datascience.entity.config_entity import DataTransformationConfig
 from pathlib import Path
 
 

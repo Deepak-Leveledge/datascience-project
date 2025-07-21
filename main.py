@@ -1,3 +1,5 @@
+from src.datascience.config.configuration import ConfigurationManager
+from src.datascience.pipelines.model_training import ModelTrainerPipeline
 from src.datascience import logger
 from src.datascience.pipelines.data_injection import DataIngestionTrainingPipeline
 from src.datascience.pipelines.data_validation import DataValidationTrainingPipeline
@@ -38,4 +40,32 @@ except Exception as e:
         logger.exception(e)
         raise e
 
+
+
+
+STAGE_NAME = "Model Trainer Stage"
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    config = ConfigurationManager()
+    model_trainer_config = config.get_model_trainer_config()
+    obj = ModelTrainerPipeline(config=model_trainer_config)
+    obj.initiate_model_training()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
 # logger.info("Logging has been set up successfully.")
+
+
+
+# if __name__ == "__main__":
+#     try:
+#         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+#         config = ConfigurationManager()
+#         model_trainer_config = config.get_model_trainer_config()
+#         obj = ModelTrainerPipeline(config=model_trainer_config)
+#         obj.initiate_model_training()
+#         logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+#     except Exception as e:
+#         logger.exception(e)
+#         raise e
